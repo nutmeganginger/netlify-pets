@@ -3,8 +3,10 @@ async function start() {
   const ourData = await ourPromise.json()
 
   if (ourData.success) {
-    //do something interesting
-  } else {
+    console.log(ourData)
+    document.querySelector("#render-here").innerHTML = ourData.pets
+  }
+  else {
     window.location = "/login"
   }
 }

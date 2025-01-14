@@ -292,7 +292,7 @@ html {
     }
 }
 
-/* Admin pages */
+/* Admin pages CSS*/
 
 .form-field {
     display: block;
@@ -302,4 +302,101 @@ html {
     font-size: 1rem;
     margin: 0 0 16px 0;
     border: 1px solid rgba(0, 0, 0, .09);
+    font-family: inherit;
+}
+
+textarea.form-field {
+    height: 150px;
+    resize: none;
+}
+
+.mb-big {
+    margin-bottom: 36px;
+}
+
+.small-link {
+    display: inline-block;
+    font-size: .875rem;
+    color: #999;
+    position: relative;
+    z-index: 3;
+}
+
+.site-footer .logout-text {
+    padding: 0;
+}
+
+.site-footer .logout-text button {
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #A6A6A6;
+}
+
+.action-btn {
+    text-decoration: none;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 10px 0 0;
+    font-size: .9rem;
+    cursor: pointer;
+    color: #475AFF;
+}
+
+.action-btn:last-child {
+    margin-right: 0;
+}
+
+.action-btn:hover {
+    color: #202c9c;
+    text-decoration: underline;
+}
+
+.add-pet-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 13px 18px;
+    margin: 0 0 20px 0;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    color: white;
+    background-color: #475AFF;
+    vertical-align: middle;
+}
+
+.add-pet-btn svg {
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+.add-pet-btn:hover {
+    background-color: #202c9c;
+}
+
+.still-loading .pet-card-pic,
+.still-loading .pet-card-text {
+    opacity: 0;
+}
+
+.still-loading .pet-card {
+    background-color: #e2e2e2;
+}
+
+@keyframes loadingbox {
+    0% {
+        opacity: .2;
+    }
+
+
+    100% {
+        opacity: .7;
+    }
+}
+
+.still-loading {
+    animation: .6s loadingbox ease-in-out alternate infinite;
 }

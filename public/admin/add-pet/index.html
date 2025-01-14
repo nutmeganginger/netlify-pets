@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption Center</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-section">
+    <div class="page-section-inner">
+      <a class="small-link" href="/admin"> &laquo; Back to admin dashboard</a>
+      <h2 class="page-section-title mb-big">Add New Pet</h2>
+      <form id="add-new-pet-form">
+        <input autofocus autocomplete="off" class="form-field" id="name" placeholder="Pet Name">
+        <input type="text" id="birthYear" placeholder="Year Born" class="form-field">
+        <select id="species" class="form-field">
+          <option>Dog</option>
+          <option>Cat</option>
+        </select>
+        <textarea class="form-field" id="description" placeholder="Description...."></textarea>
+        <button class="our-btn" id="submit-btn">Add New Pet</button>
+      </form>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <p class="logout-text"><button id="logout">Logout</button></p>
+    <p>&copy; 2023 Fake Adoption Center. All rights reserved.</p>
+  </footer>
+  <script src="/js/clientAddPet.js"></script>
+  <script src="/js/logout.js"></script>
+
+
+</body>
+
+</html>

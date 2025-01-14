@@ -15,13 +15,84 @@
 <body>
   <div class="page-section">
     <div class="page-section-inner">
-      <h2 class="page-section-title">Manage Pets</h2>
-      <p>If you are logged in, show the pets to manage here, however if you are not logged in, redirect user to a login
-        form page.</p>
+      <a class="small-link" href="/"> &laquo; Back to homepage</a>
+      <h2 class="page-section-title mb-big">Manage Pets</h2>
+
+      <a class="add-pet-btn" href="/admin/add-pet"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+        </svg> Add New Pet</a>
+
+      <div id="render-here">
+        <div class="list-of-pets still-loading">
+          <div class="pet-card">
+            <div class="pet-card-text">
+              <h3>-</h3>
+              <p class="pet-description">-</p>
+              <p class="pet-age">-</p>
+            </div>
+            <div class="pet-card-pic">
+              <img src="/images/fallback.jpg" alt="Pet Image">
+            </div>
+          </div> <!-- end of pet-card -->
+          <div class="pet-card">
+            <div class="pet-card-text">
+              <h3>-</h3>
+              <p class="pet-description">-</p>
+              <p class="pet-age">-</p>
+            </div>
+            <div class="pet-card-pic">
+              <img src="/images/fallback.jpg" alt="Pet Image">
+            </div>
+          </div> <!-- end of pet-card -->
+          <div class="pet-card">
+            <div class="pet-card-text">
+              <h3>-</h3>
+              <p class="pet-description">-</p>
+              <p class="pet-age">-</p>
+            </div>
+            <div class="pet-card-pic">
+              <img src="/images/fallback.jpg" alt="Pet Image">
+            </div>
+          </div> <!-- end of pet-card -->
+          <div class="pet-card">
+            <div class="pet-card-text">
+              <h3>-</h3>
+              <p class="pet-description">-</p>
+              <p class="pet-age">-</p>
+            </div>
+            <div class="pet-card-pic">
+              <img src="/images/fallback.jpg" alt="Pet Image">
+            </div>
+          </div> <!-- end of pet-card -->
+          <div class="pet-card">
+            <div class="pet-card-text">
+              <h3>-</h3>
+              <p class="pet-description">-</p>
+              <p class="pet-age">-</p>
+            </div>
+            <div class="pet-card-pic">
+              <img src="/images/fallback.jpg" alt="Pet Image">
+            </div>
+          </div> <!-- end of pet-card -->
+          <div class="pet-card">
+            <div class="pet-card-text">
+              <h3>-</h3>
+              <p class="pet-description">-</p>
+              <p class="pet-age">-</p>
+            </div>
+            <div class="pet-card-pic">
+              <img src="/images/fallback.jpg" alt="Pet Image">
+            </div>
+          </div> <!-- end of pet-card -->
+
+        </div>
+      </div>
     </div>
   </div>
   <footer class="site-footer">
-    <p><button id="logout">Logout</button></p>
+    <p class="logout-text"><button id="logout">Logout</button></p>
     <p>&copy; 2023 Fake Adoption Center. All rights reserved.</p>
   </footer>
 
