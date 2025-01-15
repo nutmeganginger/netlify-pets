@@ -5,10 +5,19 @@ async function start() {
   if (ourData.success) {
     console.log(ourData)
     document.querySelector("#render-here").innerHTML = ourData.pets
-  }
-  else {
+  } else {
     window.location = "/login"
   }
 }
 
 start()
+
+function handleDelete(id, el) {
+  el.closest(".pet-card").remove()
+
+  fetch("/.netlify/functions/deletePet", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id })
+  })
+}

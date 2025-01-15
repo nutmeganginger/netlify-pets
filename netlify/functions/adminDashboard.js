@@ -1,15 +1,12 @@
-const { MongoClient } = require("mongodb")
+const escape = require("escape-html")
+const getDbClient = require("../../our-library/getDbClient")
 const isAdmin = require("../../our-library/isAdmin")
 
-const cookie = require("cookie")
 
 const handler = async event => {
 
   if (isAdmin(event)) {
-
-    const client = new MongoClient(process.env.CONNECTIONSTRING)
-    await client.connect()
-
+    const client = await getDbClient()
     const pets = await client.db().collection("pets").find().toArray()
     client.close()
 
@@ -33,21 +30,20 @@ function generateHTML(pets) {
   ourHTML += pets.map(pet => {
     return `<div class="pet-card">
         <div class="pet-card-text">
-          <h3>${pet.name}</h3>
-          <p class="pet-description">${pet.description}</p>
+          <h3>${escape(pet.name)}</h3>
+          <p class="pet-description">${escape(pet.description)}</p>
           <div class="action-buttons">
-            <a class="action-btn" href="#">Edit</a>
-            <button class="action-btn">Delete</button>
+            <a class="action-btn" href="/admin/edit-pet?id=${pet._id}">Edit</a>
+            <button onClick="handleDelete('${pet._id}',this)" class="action-btn">Delete</button>
           </div>
         </div>
         <div class="pet-card-pic">
-          <img src="/images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
-         </div>
-        </div>`
+          <img src="/images/fallback.jpg" alt="A ${escape(pet.species)} named ${escape(pet.name)}">
+        </div>
+      </div>`
   }).join("")
   ourHTML += "</div>"
   return ourHTML
 }
-
 
 module.exports = { handler }

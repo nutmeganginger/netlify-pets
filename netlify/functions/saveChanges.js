@@ -1,6 +1,7 @@
 const sanitizeHtml = require("sanitize-html")
 const getDbClient = require("../../our-library/getDbClient")
 const isAdmin = require("../../our-library/isAdmin")
+const { ObjectId } = require("mongodb")
 
 function cleanUp(x) {
   return sanitizeHtml(x, {
@@ -37,8 +38,16 @@ const handler = async event => {
 
   if (isAdmin(event)) {
     // actually save into database 
+    if (!ObjectId.isValid(body.id)) {
+      return {
+        statusCode: 200,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ success: false })
+      }
+    }
     const client = await getDbClient()
-    await client.db().collection("pets").insertOne(pet)
+    await client.db().collection("pets").findOneAndUpdate({ _id: new ObjectId(body.id) }, { $set: pet })
+
     client.close()
 
     return {

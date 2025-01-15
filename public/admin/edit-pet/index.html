@@ -16,16 +16,16 @@
   <div class="page-section">
     <div class="page-section-inner">
       <a class="small-link" href="/admin"> &laquo; Back to admin dashboard</a>
-      <h2 class="page-section-title mb-big">Add New Pet</h2>
-      <form id="add-new-pet-form">
-        <input autofocus autocomplete="off" class="form-field" id="name" placeholder="Pet Name">
+      <h2 class="page-section-title mb-big">Edit Existing Pet</h2>
+      <form id="edit-pet-form" class="form-loading">
+        <input autocomplete="off" class="form-field" id="name" placeholder="Pet Name">
         <input type="text" id="birthYear" placeholder="Year Born" class="form-field">
-        <select class="form-field" id="species">
+        <select id="species" class="form-field">
           <option>Dog</option>
           <option>Cat</option>
         </select>
         <textarea class="form-field" id="description" placeholder="Description...."></textarea>
-        <button class="our-btn" id="submit-btn">Add New Pet</button>
+        <button class="our-btn" id="submit-btn">Save Changes</button>
       </form>
     </div>
   </div>
@@ -33,7 +33,7 @@
     <p class="logout-text"><button id="logout">Logout</button></p>
     <p>&copy; 2023 Fake Adoption Center. All rights reserved.</p>
   </footer>
-  <script src="/js/clientAddPet.js"></script>
+  <script src="/js/clientEditPet.js"></script>
   <script src="/js/logout.js"></script>
 
 

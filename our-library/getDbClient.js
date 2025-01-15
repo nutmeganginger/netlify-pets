@@ -6,4 +6,4 @@ async function getDb() {
   return client
 }
 
-module.exports = { getDb }
+module.exports = getDb

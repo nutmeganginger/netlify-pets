@@ -400,3 +400,17 @@ textarea.form-field {
 .still-loading {
     animation: .6s loadingbox ease-in-out alternate infinite;
 }
+
+.form-loading .form-field {
+    background-color: #e2e2e2;
+    color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+}
+
+.form-loading .form-field::placeholder {
+    color: #e2e2e2;
+}
+
+.form-loading {
+    animation: .6s loadingbox ease-in-out alternate infinite;
+}
