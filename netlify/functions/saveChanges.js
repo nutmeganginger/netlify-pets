@@ -13,13 +13,6 @@ function cleanUp(x) {
 const handler = async event => {
   const body = JSON.parse(event.body)
 
-  if (typeof body.name != "string") {
-    body.name = ""
-  }
-
-  if (typeof body.description != "string") {
-    body.description = ""
-  }
 
   let pet = {
     name: cleanUp(body.name),
