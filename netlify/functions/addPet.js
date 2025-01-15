@@ -23,8 +23,8 @@ const handler = async event => {
     pet.birthYear = body.birthYear
   }
 
-  if (pet.species != "cat" && pet.species != "dog") {
-    pet.species = "dog"
+  if (pet.species != "Cat" && pet.species != "Dog") {
+    pet.species = "Dog"
   }
 
   if (isAdmin(event)) {
