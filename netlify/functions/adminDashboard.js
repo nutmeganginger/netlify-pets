@@ -28,6 +28,12 @@ const handler = async event => {
 function generateHTML(pets) {
   let ourHTML = `<div class="list-of-pets">`
   ourHTML += pets.map(pet => {
+    if (!pet.photo) {
+      pet.photo = "/images/fallback.jpg"
+    } else {
+      pet.photo = `https://res.cloudinary.com/dkdbg6fvl/image/upload/w_330,h_392,c_fill/${pet.photo}.jpg`
+    }
+
     return `<div class="pet-card">
         <div class="pet-card-text">
           <h3>${escape(pet.name)}</h3>
@@ -38,7 +44,7 @@ function generateHTML(pets) {
           </div>
         </div>
         <div class="pet-card-pic">
-          <img src="/images/fallback.jpg" alt="A ${escape(pet.species)} named ${escape(pet.name)}">
+          <img src="${escape(pet.photo)}" alt="A ${escape(pet.species)} named ${escape(pet.name)}">
         </div>
       </div>`
   }).join("")
